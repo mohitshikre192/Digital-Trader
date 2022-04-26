@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Invoicing.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Customer - list</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cust_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cust_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cust_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cust_Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cust_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cust_Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cust_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cust_Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<button class="btn btn-primary">
+    <a asp-action="Create">Add New Customer</a>
+</button>

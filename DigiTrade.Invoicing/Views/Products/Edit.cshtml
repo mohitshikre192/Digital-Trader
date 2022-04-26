@@ -1,0 +1,89 @@
+﻿    @model Invoicing.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="sale_price" class="control-label"></label>
+                <input asp-for="sale_price" class="form-control" />
+                <span asp-validation-for="sale_price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cur_stock" class="control-label"></label>
+                <input asp-for="cur_stock" class="form-control" />
+                <span asp-validation-for="cur_stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tax" class="control-label"></label>
+                <input asp-for="tax" class="form-control" />
+                <span asp-validation-for="tax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandId" class="control-label"></label>
+                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+                <span asp-validation-for="BrandId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="processor" class="control-label"></label>
+                <input asp-for="processor" class="form-control" />
+                <span asp-validation-for="processor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ram" class="control-label"></label>
+                <input asp-for="Ram" class="form-control" />
+                <span asp-validation-for="Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rom" class="control-label"></label>
+                <input asp-for="Rom" class="form-control" />
+                <span asp-validation-for="Rom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="primary_cam" class="control-label"></label>
+                <input asp-for="primary_cam" class="form-control" />
+                <span asp-validation-for="primary_cam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="front_cam" class="control-label"></label>
+                <input asp-for="front_cam" class="form-control" />
+                <span asp-validation-for="front_cam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="battery" class="control-label"></label>
+                <input asp-for="battery" class="form-control" />
+                <span asp-validation-for="battery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

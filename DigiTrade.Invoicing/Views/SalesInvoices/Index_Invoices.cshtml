@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Invoicing.Models.SalesInvoice>
+
+@{
+    ViewData["Title"] = "Index_Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Invoices - list</h1>
+
+<button>
+    <a asp-action="Create">Create new Invoice</a>
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice_num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoice_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.Cust_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invoice_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invoice_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customers.Cust_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Invoice_num">Modify</a> |
+                <a asp-action="Details" asp-route-id="@item.Invoice_num">View Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Invoice_num">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
